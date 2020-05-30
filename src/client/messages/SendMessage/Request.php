@@ -40,7 +40,7 @@ class Request implements RequestInterface
 
     public function url(): string
     {
-        return '/messages1';
+        return '/messages';
     }
 
     public function method(): string
@@ -51,7 +51,7 @@ class Request implements RequestInterface
     public function params(): array
     {
         $query =  [
-            'disable_link_preview' => $this->disableLinkPreview,
+            'disable_link_preview' => $this->disableLinkPreview ? 'true' : 'false',
         ];
         if ($this->userId) {
             $query['user_id'] = $this->userId;
